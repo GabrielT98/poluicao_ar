@@ -11,7 +11,7 @@ detectordao = DetectorDAO()
 
 @app.route("/")
 def index():
-    return ' <h1>ihiiihi</h1>'
+    return ' <h1>Web service</h1>'
 
 @app.route("/adicionar", methods=["POST"])
 def adicionar_medida():
@@ -32,9 +32,6 @@ def adicionar_medida():
     detector.set_valor_oxido_nitroso(valor_oxido_nitroso)
 
     detectordao.adicionar_medida(detector)
-
-    #with open('medicoes.json','w') as outfile:
-     #   json.dump(detector.to_dict(),outfile)
 
     return detector.to_dict(),201
 
