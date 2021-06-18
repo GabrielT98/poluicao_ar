@@ -46,11 +46,11 @@ class Detector():
 
     def to_dict(self):
         return{
-            'id': self.__id,
-            'data': self.__data,
-            'ozonio': self.__valor_ozonio,
-            'material_particulado':self.__valor_material_particulado,
-            'monoxido_carbono': self.__valor_monoxido_carbono,
-            'diooxido_enxofre': self.__valor_dioxido_enxofre,
-            'ooxido_nitroso': self.__valor_oxido_nitroso
+            "id": self.__id,
+            "data": self.__data.strftime('%d/%m/%Y %H:%M'),
+            "ozonio": self.__valor_ozonio,
+            "material_particulado":self.__valor_material_particulado,
+            "monoxido_carbono": self.__valor_monoxido_carbono,
+            "dioxido_enxofre": self.__valor_dioxido_enxofre,
+            "oxido_nitroso": self.__valor_oxido_nitroso
         }
