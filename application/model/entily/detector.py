@@ -20,6 +20,10 @@ class Detector():
 
     def set_valor_material_particulado(self,valor: float):
         self.__valor_material_particulado = valor
+
+    def set_valor_monoxido_carbono(self,valor:float):
+        self.__valor_monoxido_carbono = valor
+        
     def set_valor_dioxido_enxofre(self,valor: float):
         self.__valor_dioxido_enxofre = valor
 

@@ -1,7 +1,8 @@
 from application.model.entily.detector import Detector
+
 class DetectorDAO():
     def __init__(self):
-        self.__medidas_list = []
+        self.__medidas_list =[]
     
     def adicionar_medida(self,detector: Detector):
         self.__medidas_list.append(detector)
