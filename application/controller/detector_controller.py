@@ -1,5 +1,6 @@
 
-from datetime import datetime
+from datetime import date, datetime
+from datetime import date
 from application.model.entily.detector import Detector
 from application.model.dao.detectorDAO import DetectorDAO
 from application import app
@@ -49,4 +50,19 @@ def buscar_id(id):
             detector_dict_list.append(detector.to_dict())
     return jsonify(detector_dict_list)
 
-    return jsonify({"error": "Detector não encontrada"}), 404
+    #return jsonify({"error": "Detector não encontrada"}), 404
+@app.route("/buscar/<dia>/<mes>/<ano>", methods=["GET"])
+def buscar_data(dia,mes,ano):
+    result = detectordao.listar_medidas()
+    detector_dict_list = []
+    
+    data = "{dia}/{mes}/{ano}".format(dia = dia,mes = mes,ano = ano)
+    print(data)
+
+    for detector in result:
+        dt = detector.get_data()
+        dtt = datetime.strftime(dt,'%d/%m/%Y')
+        if dtt == data:
+            detector_dict_list.append(detector.to_dict())
+    
+    return jsonify(detector_dict_list)
